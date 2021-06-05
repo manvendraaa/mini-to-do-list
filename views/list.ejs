@@ -1,24 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%=title%></title>
+    <title>
+        <%=title%>
+    </title>
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
-<body>
-    <h1>Home Route</h1>
-    <ul>
-        <% tasks.forEach((item) => { %>
-            <li><%= item %></li>
-        <% }) %>
-    </ul>
 
-    <form action="/" method="POST">
-        <input type="text" name="newItem" >
-        <button type="submit"> Add Item! </button>
-    </form>
-    
-    
+<body>
+    <div class="box" id="heading">
+        <h1>Your Tasks!</h1>
+    </div>
+    <div class="box">
+
+        <% tasks.forEach((item)=> { %>
+            <div class="item">
+                <input type="checkbox">
+                <p>
+                    <%= item %>
+                </p>
+            </div>
+
+            <% }) %>
+
+                <form action="/" method="POST">
+                    <input type="text" autocomplete="off" placeholder="New Item" name="newItem">
+                    <button type="submit"> + </button>
+                </form>
+    </div>
+
+
+
+
 </body>
+
 </html>
