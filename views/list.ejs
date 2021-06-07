@@ -19,13 +19,16 @@
     <div class="box">
 
         <% tasks.forEach((item)=> { %>
-            <div class="item">
-                <input type="checkbox">
+            <form method="POST" action="/delete">
+                <div class="item">
+                <input type="checkbox" name="checkbox" value="<%= item._id %>" onChange="this.form.submit()">
                 <p>
-                    <%= item %>
+                    <%= item.name %>
                 </p>
             </div>
 
+            </form>
+            
             <% }) %>
 
                 <form action="/" method="POST">
